@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOM & Events Demo</title>
+  <style>
+    body {
+            font-family: system-ui, Arial, sans-serif; 
+            margin: 2rem; 
+            background-color:blanchedalmond
+          }
+
+    .dark {
+            background: green; 
+            color: #eee; 
+          }
+
+    .app {
+           max-width: 720px; 
+           margin: 0 auto; 
+           display: grid;
+           gap: 1rem;
+           color:black;
+          
+     }
+
+    .row { 
+           display: flex; 
+           gap: .5rem; 
+           align-items: center; 
+        
+      }
+
+    ul {
+         list-style: none;
+         padding: 0px;; 
+    }
+
+    li.item.flex {
+                     display: flex; 
+                     justify-content: space-between; 
+                     align-items: center; 
+                     padding: .5rem .75rem; 
+                     border: 1px solid #ddd; 
+                     border-radius: .5rem;
+         }
+
+    button {
+              cursor: pointer;
+       }
+
+    
+  </style>
+  
+  <!-- Use defer so DOM exists when dom.js runs -->
+  <script defer src="./src/js/dom.js"></script>
+</head>
+<body>
+  <div class="app">
+   <h1 id="title">
+  <i><marquee behavior="scroll" direction="left">Loading…</marquee></i>
+</h1>
+
+    <div class="row">
+      <button id="toggleTheme">Switch to Dark</button>
+      <a id="docsLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"></a>
+    </div>
+
+   <label class="row">
+  <span>Your name:</span>
+  <input id="name" type="text" placeholder="Type here…" />
+</label>
+<p id="preview">Start typing...</p>
+
+    <form id="addForm" class="row" autocomplete="off">
+      <input id="itemText" type="text" placeholder="New item…" />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="list"></ul>
+  </div>
+</body>
+</html>
